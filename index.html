@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internet usage trends in the U.S.</title>
+  <link rel="stylesheet" href="styles/datastyles.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <script src="https://code.highcharts.com/themes/sunset.js"></script>
+
+</head>
+<body>
+
+<h1>title here</h1>
+<p>By Darcy Schild</p>
+
+<p>at least five sentences about the subject matter of the two charts</p>
+
+
+  <div id="container"></div>
+
+    <p><em>Source: </em> Pew Research Center, <a href="http://www.pewinternet.org/dataset/jan-3-10-2018-core-trends-survey/">January 2018 Core Trends Survey</a></p>
+
+  <div id="chart2"></div>
+
+    <p><em>Source: </em> Pew Research Center, <a href="http://www.pewinternet.org/dataset/jan-3-10-2018-core-trends-survey/">January 2018 Core Trends Survey</a></p>
+
+<!-- note for me to add my chart code here to stay organized -->
+
+<script>
+  Highcharts.chart('container', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'About how often do you use the internet?'
+    },
+    subtitle: {
+      text: 'Source: Pew Research Center'
+    },
+    xAxis: {
+      categories: [
+        'July 2015', 'April 2016', 'May 2016', 'January 2018'
+      ],
+      crosshair: true
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Percentage (%)'
+      }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+    },
+    plotOptions: {
+      column: {
+        pointPadding: 0.2,
+        borderWidth: 0
+      }
+    },
+    series: [{
+      name: 'Almost consistently',
+      data: [24, 28, 25, 30]
+    }, {
+      name: 'About once a day',
+      data: [11, 10, 11, 9]
+    }, {
+      name: 'Several times a week',
+      data: [7, 7, 7, 7]
+    }, {
+      name: 'Less often',
+      data: [8, 6, 6, 6]
+    }]
+  });
+
+
+  Highcharts.chart('chart2', {
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+      },
+      title: {
+          text: 'Overall, when you add up all the advantages and disadvantages of the internet, would you say the internet has mostly been a good thing or a bad thing for society?'
+      },
+      subtitle: {
+        text: 'Source: Pew Research Center'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: false
+              },
+              showInLegend: true
+          }
+      },
+      series: [{
+          name: 'Answers',
+          colorByPoint: true,
+          data: [{
+              name: 'Good thing',
+              y: 65,
+              sliced: true,
+              selected: true
+          }, {
+              name: 'Bad thing',
+              y: 16
+          }, {
+              name: 'Some of both',
+              y: 14
+          }, {
+              name: "Don't know",
+              y: 4
+          }, {
+              name: 'Did not answer',
+              y: 1
+          }]
+      }]
+  });
+
+</script>
+
+
+
+
+</body>
+</html>
