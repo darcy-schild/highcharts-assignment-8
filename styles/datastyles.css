@@ -1,0 +1,28 @@
+
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-family: 'Montserrat', 'Arial', 'Tahoma', sans-serif;
+}
+
+body {
+    max-width: 900px;
+    background: #E8D5D1;
+    font-family: 'Montserrat', 'Arial', 'Tahoma', sans-serif;
+    margin: 0;
+    padding-left: 2rem;
+}
+
+#container, #chart2 {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
